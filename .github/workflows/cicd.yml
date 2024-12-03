@@ -1,18 +1,27 @@
-name: shell commands
+name: Shell Commands
 
 on:
-    push:
-      branches:
-        - feature/cicd
+  push:
+    branches:
+      - feature/cicd
 
 jobs:
-    run-shell-commands:
-        runs-on: ubuntu-latest
-        steps:
-            - name: string
-              run: echo "welcome to githubactions cicd"
-            - name: multiscripts
-              run: |
-                node -v
-                npm -v
-                echo "welcome to githubactions cicd"
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: String
+        run: echo "Welcome to GitHub Actions CI/CD"
+      - name: Multi-Scripts
+        run: |
+          node -v
+          npm -v
+          echo "Welcome to GitHub Actions CI/CD"
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+      - name: PowerShell Commands
+        run: Get-Location
+      - name: Bash Commands
+        run: |
+          pwd
+        shell: bash
